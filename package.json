@@ -1,0 +1,31 @@
+{
+  "name": "e2e-testing",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "nightwatch": "nightwatch",
+    "nightwatch-chrome": "nightwatch -e chrome",
+    "nightwatch-firefox": "nightwatch -e firefox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christophehurpeau/e2e-testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christophehurpeau/e2e-testing/issues"
+  },
+  "homepage": "https://github.com/christophehurpeau/e2e-testing#readme",
+  "devDependencies": {
+    "chromedriver": "^2.41.0",
+    "geckodriver": "^1.12.2",
+    "nightwatch": "^0.9.21",
+    "selenium-server-standalone-jar": "^3.13.0"
+  }
+}

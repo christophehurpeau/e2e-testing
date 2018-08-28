@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10-stretch-browsers
+    steps:
+      - checkout
+      # - run:
+      #     name: Start Selenium
+      #     command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+      #     background: true
+      - run:
+          name: Run tests
+          command: npm run nightwatch -- -c nightwatch.circleci.conf.js
+
+      - store_test_results:
+          path: reports/
