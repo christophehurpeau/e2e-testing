@@ -28,14 +28,6 @@
       }
     },
 
-    "circleci": {
-      "selenium": {
-        "start_process": false
-      },
-
-      "output_folder": "${CIRCLE_TEST_REPORTS}"
-    },
-
     "chrome": {
       "desiredCapabilities": {
         "browserName": "chrome"
