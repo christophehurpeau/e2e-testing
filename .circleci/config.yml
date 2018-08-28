@@ -21,8 +21,17 @@ jobs:
       #     command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
       #     background: true
       - run:
+          name: Install the latest Firefox ESR
+          command: |
+            sudo apt-get remove firefox-mozilla-build &&
+            sudo apt install firefox-esr &&
+            firefox --version
+      - run:
           name: Run tests
-          command: npm run nightwatch -- -e firefox
+          command: npm run nightwatch -e chrome
+      - run:
+          name: Run on browserstack
+          command: npm run nightwatch -- -c nightwatch.browserstack.circleci.conf.js -e firefox
 
       - store_test_results:
           path: reports/
