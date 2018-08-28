@@ -18,5 +18,5 @@ module.exports = (function (config) {
     selenium_port: config.selenium.port,
   };
 
-  return settings;
+  return config;
 })(require('./nightwatch.json'));
