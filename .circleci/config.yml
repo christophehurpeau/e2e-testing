@@ -5,6 +5,17 @@ jobs:
       - image: circleci/node:10-stretch-browsers
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ arch }}-{{ checksum "package-lock.json" }}
+            - v1-dependencies-{{ arch }}
+      - run:
+          name: Install dependencies
+          command: npm install --prefer-offline
+      - save_cache:
+          key: v1-dependencies-{{ arch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
       # - run:
       #     name: Start Selenium
       #     command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
