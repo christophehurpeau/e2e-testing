@@ -1,4 +1,5 @@
 module.exports = (function (config) {
+  console.log(process.env.BROWSERSTACK_USER);
   // "output_folder": "${CIRCLE_TEST_REPORTS}"
 
   config.selenium.start_process = false;
