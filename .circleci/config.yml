@@ -28,7 +28,7 @@ jobs:
             firefox --version
       - run:
           name: Run tests
-          command: npm run nightwatch -e chrome
+          command: npm run nightwatch -- -e chrome
       - run:
           name: Run on browserstack
           command: npm run nightwatch -- -c nightwatch.browserstack.circleci.conf.js -e firefox
